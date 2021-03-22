@@ -1,0 +1,763 @@
+@import "utils/variables";
+@import "utils/base";
+@import "components/header";
+@import "components/container";
+@import "components/logo";
+@import "components/navigation-list";
+@import "components/contacts-list";
+
+section {
+  padding: 94px 0;
+}
+
+/* Стилі для іконок соціальних мереж */
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: var(--icon-color);
+
+  transition: background-color var(--animation-time) var(--animation-function),
+    fill var(--animation-time) var(--animation-function);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  fill: inherit;
+}
+
+.social-link:hover,
+.social-link:focus,
+.join .social-link:hover,
+.join .social-link:focus {
+  background-color: var(--accent);
+  fill: var(--white);
+}
+
+/* Стилі Футера */
+
+footer {
+  background-color: var(--background-dark);
+  color: var(--white);
+
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+}
+
+footer address {
+  margin-top: 20px;
+}
+
+footer address ul {
+  margin-top: 9px;
+}
+
+footer address ul :not(:first-child) {
+  margin-top: 9px;
+}
+
+footer .container {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-contacts {
+  text-decoration: none;
+  color: var(--grey-text-op60);
+}
+
+.join {
+  margin-left: 86px;
+}
+
+.join p {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.join ul {
+  display: flex;
+}
+
+.join ul :not(:last-child) {
+  margin-right: 10px;
+}
+
+.join .social-link {
+  background-color: rgba(255, 255, 255, 0.1);
+  fill: var(--white);
+}
+
+/* Стилі для блоку футера "Підписка" */
+
+.subscription {
+  margin-left: 93px;
+}
+
+.subscription p {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.subscription-input {
+  width: 351px;
+  height: 50px;
+  padding: 15px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: inherit;
+  color: var(--white);
+}
+
+.subscription-button {
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--accent);
+  cursor: pointer;
+  margin-left: 12px;
+
+  text-align: center;
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  letter-spacing: 0.06em;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color var(--animation-time) var(--animation-function);
+}
+
+.subscription-button:focus,
+.subscription-button:hover {
+  background-color: #188ce8;
+}
+
+.subscription-icon {
+  margin-left: 10px;
+}
+
+/* BackDrop */
+
+.service-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity var(--animation-time) var(--animation-function);
+}
+
+.service-backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Стилі модального вікна */
+
+.service-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+
+  width: 528px;
+  height: 581px;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: var(--white);
+
+  transition: transform var(--animation-time) var(--animation-function);
+}
+
+.service-backdrop.is-hidden .service-modal {
+  transform: translateX(-50%) translateY(-50%) scale(0.5);
+}
+
+/* Стилі кнопки "Закрити" модального вікна */
+
+.servise-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  background-color: var(--white);
+  fill: var(--black);
+  background-origin: border-box;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: fill var(--animation-time) var(--animation-function);
+}
+
+.servise-button-icon {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  fill: inherit;
+}
+
+.servise-button:hover,
+.servise-button:focus {
+  fill: var(--accent);
+}
+
+/* Стилі форми */
+
+.servise-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.servise-form p {
+  color: var(--black-text);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+
+.form-fild {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-label {
+  font-size: 12px;
+  line-height: 1.166;
+  letter-spacing: 0.01em;
+  color: var(--grey-text);
+
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.form-input {
+  position: relative;
+}
+
+.form-input input {
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  padding-left: 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition: border-color var(--animation-time) var(--animation-function);
+}
+
+.form-input input:focus,
+.form-input input:hover {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+
+  transition: fill var(--animation-time) var(--animation-function);
+}
+
+.form-input input:focus + .input-icon,
+.form-input input:hover + .input-icon {
+  fill: var(--accent);
+}
+
+.form-textarea {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.textarea-fild {
+  padding: 12px 16px;
+  width: 100%;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  resize: none;
+  transition: border-color var(--animation-time) var(--animation-function);
+}
+
+.textarea-fild:focus,
+.textarea-fild:hover {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.textarea-fild::placeholder {
+  font-size: 12px;
+  line-height: 1.166;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.form-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-label {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.submit-square {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+  border: 2px solid var(--black-text);
+  border-radius: 2px;
+  opacity: 1;
+  transition: opacity var(--animation-time) var(--animation-function);
+}
+
+.submit-checkbox:checked ~ .submit-square {
+  opacity: 0;
+}
+
+.submit-checkbox:checked + .submit-icon {
+  opacity: 1;
+}
+
+.submit-icon {
+  position: absolute;
+  opacity: 0;
+  transition: opacity var(--animation-time) var(--animation-function);
+}
+
+.submit-contract {
+  font-size: 14px;
+  line-height: 1.714;
+  color: var(--grey-text);
+}
+
+.submit-contract a {
+  color: var(--accent);
+}
+
+.submit-button {
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--accent);
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  text-align: center;
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  letter-spacing: 0.06em;
+
+  transition: background-color var(--animation-time) var(--animation-function);
+}
+
+.submit-button:focus,
+.submit-button:hover {
+  background-color: #188ce8;
+}
+
+/* Додаткові стилі */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.benefits,
+.activity,
+.team,
+.button-list,
+.projects {
+  display: flex;
+}
+
+/* Секція героя */
+
+.section-hero {
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--background-dark);
+  padding: 200px 0;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.section-hero h1 {
+  width: 700px;
+  display: inline-block;
+}
+
+.section-hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-hero {
+  background-color: var(--accent);
+  color: var(--white);
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
+  padding: 10px 32px;
+  margin-top: 30px;
+}
+
+/* Наші переваги */
+
+.section-benefits {
+  padding-bottom: 0;
+}
+
+.benefits {
+  flex-wrap: wrap;
+  margin-left: -30px;
+}
+
+.benefits h3 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.benefits p {
+  font-size: 14px;
+  line-height: 1.71;
+}
+
+.benefits-item {
+  flex-basis: calc(100% / 4 - 30px);
+  margin-left: 30px;
+}
+
+.benefits-img {
+  width: 270px;
+  height: 120px;
+  background-color: var(--background-light);
+  margin-bottom: 30px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.benefits-icon {
+  width: 70px;
+  height: 70px;
+}
+
+/* Наша діяльність */
+
+.container > h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.activity {
+  justify-content: space-between;
+}
+
+.activity-thumb {
+  position: relative;
+}
+
+.activity-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 70px;
+
+  background: rgba(47, 48, 58, 0.8);
+}
+
+.activity-description p {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* Наша команда */
+
+.section-team {
+  background-color: var(--background-light);
+}
+
+.team {
+  flex-wrap: wrap;
+  margin-left: -30px;
+}
+
+.team h3 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  margin-bottom: 10px;
+}
+
+.team p {
+  font-size: 16px;
+  line-height: 1.19;
+  margin-bottom: 16px;
+}
+
+.team-item {
+  background-color: var(--white);
+  flex-basis: calc(100% / 4 - 30px);
+  margin-left: 30px;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.team-item ul {
+  display: flex;
+}
+
+.team-description {
+  text-align: center;
+  padding: 30px 32px;
+}
+
+.team-description ul :not(:last-child) {
+  margin-right: 10px;
+}
+
+/* Наші клієнти */
+
+.client {
+  display: flex;
+}
+
+.client li:not(:last-child) {
+  margin-right: 30px;
+}
+
+.client-link {
+  display: flex;
+  width: 170px;
+  height: 90px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  fill: var(--icon-color);
+  justify-content: center;
+  align-items: center;
+
+  transition: fill var(--animation-time) var(--animation-function);
+}
+
+.client-icon {
+  fill: inherit;
+}
+
+.client-link:hover,
+.client-link:focus {
+  fill: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+/* Кнопки портфоліо */
+
+.button-portfolio {
+  background-color: var(--background-light);
+  color: inherit;
+  padding: 6px 22px;
+  border-radius: 4px;
+  border-width: 0;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: 0.03em;
+
+  transition: background-color var(--animation-time) var(--animation-function),
+    color var(--animation-time) var(--animation-function),
+    box-shadow var(--animation-time) var(--animation-function);
+}
+
+.button-portfolio:hover,
+.button-portfolio:focus {
+  background-color: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.button-list {
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.button-list li {
+  margin-right: 8px;
+}
+
+.button-list :last-child {
+  margin-right: 0px;
+}
+
+/* Проекти портфоліо */
+
+.projects h2 {
+  color: var(--black-text);
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.projects p {
+  font-size: 16px;
+  line-height: 1.87;
+}
+
+.projects a {
+  text-decoration: none;
+  display: block;
+
+  transition: box-shadow var(--animation-time) var(--animation-function);
+}
+
+.projects a:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.projects {
+  flex-wrap: wrap;
+  margin-top: -30px;
+  margin-left: -30px;
+}
+
+.project-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  padding: 63px 24px;
+
+  transform: translateY(100%);
+  transition: transform var(--animation-time) var(--animation-function);
+}
+
+.project-item:hover .project-overlay {
+  transform: translateY(0);
+}
+
+.project-overlay p {
+  color: var(--white);
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+}
+
+.project-item {
+  flex-basis: calc(100% / 3 - 30px);
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.project-description {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color-project);
+  border-left: 1px solid var(--border-color-project);
+  border-right: 1px solid var(--border-color-project);
+}
+
+.project-description p {
+  margin-top: 4px;
+}

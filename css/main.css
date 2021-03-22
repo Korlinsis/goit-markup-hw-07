@@ -467,18 +467,7 @@ footer .container {
   line-height: 1.15;
   text-align: center;
   letter-spacing: 0.03em;
-  margin-bottom: 12px;
-}
-
-.form-fild {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 9px;
 }
 
 .form-label {
@@ -486,12 +475,19 @@ footer .container {
   line-height: 1.166;
   letter-spacing: 0.01em;
   color: var(--grey-text);
-  display: inline-block;
+}
+
+.textarea-label {
+  font-size: 12px;
+  line-height: 1.166;
+  letter-spacing: 0.01em;
+  color: var(--grey-text);
   margin-bottom: 4px;
 }
 
 .form-input {
   position: relative;
+  margin-bottom: 10px;
 }
 
 .form-input input {

@@ -1,6 +1,7 @@
 @import "utils/variables";
-@import "utils/base";
-@import "utils/visually-hidden";
+@import "base/normalize";
+@import "base/base";
+@import "base/visually-hidden";
 @import "components/header";
 @import "components/container";
 @import "components/logo";

@@ -122,7 +122,7 @@
         </symbol>
 
         <symbol id="icon-check" viewBox="0 0 32 32">
-            <path fill="var(--color1, #2196f3)" d="M4 1h24a4 4 0 014 4v22a4 4 0 01-4 4H4a4 4 0 01-4-4V5a4 4 0 014-4z" />
+            <path d="M4 1h24a4 4 0 014 4v22a4 4 0 01-4 4H4a4 4 0 01-4-4V5a4 4 0 014-4z" />
             <path fill="var(--color2, #fff)" stroke="var(--color2, #fff)" stroke-width=".4"
                 d="M7.914 16.503l-.138-.131-2.067 1.958 7.282 6.947 15.298-14.594-2.053-1.959-13.245 12.623-5.077-4.844z" />
         </symbol>

@@ -13,6 +13,11 @@
   --border-color-project: #eeeeee;
   --animation-time: 250ms;
   --animation-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --big-button__font-family: "Roboto", sans-serif;
+  --big-button__font-weight: 700;
+  --big-button__font-size: 16px;
+  --big-button__line-height: 1.875;
+  --big-button__letter-spacing: 0.06em;
 }
 
 /*
@@ -552,11 +557,11 @@ img {
   cursor: pointer;
   text-align: center;
   color: var(--white);
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.875;
-  letter-spacing: 0.06em;
+  font-family: var(--big-button__font-family);
+  font-weight: var(--big-button__font-weight);
+  font-size: var(--big-button__font-size);
+  line-height: var(--big-button__line-height);
+  letter-spacing: var(--big-button__letter-spacing);
   -webkit-transition: background-color var(--animation-time) var(--animation-function);
   transition: background-color var(--animation-time) var(--animation-function);
 }
@@ -1081,6 +1086,7 @@ img {
 
 .submit-area__icon {
   position: absolute;
+  fill: var(--accent);
   opacity: 0;
   -webkit-transition: opacity var(--animation-time) var(--animation-function);
   transition: opacity var(--animation-time) var(--animation-function);

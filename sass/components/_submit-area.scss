@@ -13,6 +13,7 @@
 
 .submit-area__icon {
   position: absolute;
+  fill: var(--accent);
   opacity: 0;
   transition: opacity var(--animation-time) var(--animation-function);
 }
